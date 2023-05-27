@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Estoque de Produtos</string>
+    <string name="login_label">Login</string>
+    <string name="password_label">Senha</string>
+    <string name="server_ip_label">IP Servidor: </string>
+    <string name="login_button">Login</string>
+    <string name="email_input">E-mail</string>
+    <string name="name_input">Nome</string>
+    <string name="signup_button">Cadastrar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="close_button">Fechar</string>
+    <string name="sign_up_title">Cadastrar</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="back_button">Voltar</string>
+</resources>
