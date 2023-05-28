@@ -9,11 +9,12 @@ import com.unifaj.projeto_final.env.APIEnv;
 import com.unifaj.projeto_final.interfaces.VolleyCallback;
 
 public class ProductService {
-    public APIEnv env = new APIEnv();
+    public APIEnv env;
     private RequestQueue _queue;
 
     public ProductService(RequestQueue queue) {
         _queue = queue;
+        env = APIEnv.getInstance();
     }
 
     public void getProducts(VolleyCallback callback) {

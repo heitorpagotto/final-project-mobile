@@ -1,5 +1,8 @@
 package com.unifaj.projeto_final.models.entities;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Products {
     private String name;
     private int quantity;
@@ -29,7 +32,9 @@ public class Products {
         this.price = price;
     }
 
-    public String stringfy() {
-        return getName() + " " + getQuantity() + " " + getPrice();
+    public String toString() {
+        Locale localeBR = new Locale("pt", "BR");
+        NumberFormat moneyBRL = NumberFormat.getCurrencyInstance(localeBR);
+        return getName() + "  Qtd: " + getQuantity() + "  " + moneyBRL.format(getPrice());
     }
 }

@@ -2,7 +2,7 @@
     <string name="app_name">Estoque de Produtos</string>
     <string name="login_label">Login</string>
     <string name="password_label">Senha</string>
-    <string name="server_ip_label">IP Servidor: </string>
+    <string name="server_ip_label">IP Servidor</string>
     <string name="login_button">Login</string>
     <string name="email_input">E-mail</string>
     <string name="name_input">Nome</string>

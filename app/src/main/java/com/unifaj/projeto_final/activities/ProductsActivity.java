@@ -1,9 +1,12 @@
 package com.unifaj.projeto_final.activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +37,20 @@ public class ProductsActivity extends AppCompatActivity {
         _productService = new ProductService(Volley.newRequestQueue(this));
 
         Button finishButton = findViewById(R.id.close_button);
-        finishButton.setOnClickListener(v -> finish());
+        finishButton.setOnClickListener(v -> {
+            try {
+                SharedPreferences preferences = getSharedPreferences("userPref", Context.MODE_PRIVATE);
+                ;
+                SharedPreferences.Editor preferenceEditor = preferences.edit();
+
+                preferenceEditor.putString("user", "");
+                preferenceEditor.commit();
+
+                finish();
+            } catch (Exception e) {
+                Toast.makeText(this, "Erro ao salvar os dados. Tente novamente", Toast.LENGTH_LONG).show();
+            }
+        });
 
         getProducts();
     }
@@ -63,7 +79,7 @@ public class ProductsActivity extends AppCompatActivity {
 
                     List<String> names = new ArrayList<>();
                     productList.getData().forEach(x -> {
-                        names.add(x.stringfy());
+                        names.add(x.toString());
                     });
 
                     ListView simpleList = (ListView) findViewById(R.id.product_listview);

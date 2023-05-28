@@ -23,34 +23,49 @@
         android:id="@+id/password_input"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/password_label"
-        android:inputType="numberPassword"
+        android:inputType="text|textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_input" />
+
+    <EditText
+        android:id="@+id/ip_input"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/server_ip_label"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="115dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
         android:text="@string/login_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+        app:layout_constraintTop_toBottomOf="@+id/ip_input" />
 
     <Button
         android:id="@+id/signup_button"
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:text="@string/signup_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+        app:layout_constraintTop_toBottomOf="@+id/ip_input" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

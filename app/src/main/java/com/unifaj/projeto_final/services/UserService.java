@@ -9,7 +9,6 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.unifaj.projeto_final.env.APIEnv;
 import com.unifaj.projeto_final.interfaces.VolleyCallback;
-import com.unifaj.projeto_final.models.dto.LoginRequest;
 import com.unifaj.projeto_final.models.entities.User;
 
 import org.json.JSONException;
@@ -18,11 +17,12 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 
 public class UserService {
-    public APIEnv env = new APIEnv();
+    public APIEnv env;
     private RequestQueue _queue;
 
     public UserService(RequestQueue queue) {
         this._queue = queue;
+        env = APIEnv.getInstance();
     }
 
     public void register(User register, VolleyCallback callback) throws JSONException {
@@ -51,6 +51,7 @@ public class UserService {
             public String getBodyContentType() {
                 return "application/json; charset=utf-8";
             }
+
             @Override
             public byte[] getBody() throws AuthFailureError {
                 try {

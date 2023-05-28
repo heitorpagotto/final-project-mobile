@@ -4,7 +4,6 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.ResponseDelivery;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
@@ -20,11 +19,12 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 
 public class AuthService {
-    public APIEnv env = new APIEnv();
+    public APIEnv env;
     private RequestQueue _queue;
 
     public AuthService(RequestQueue queue) {
         this._queue = queue;
+        env = APIEnv.getInstance();
     }
 
     public DefaultResponse<User> logIn(LoginRequest login, VolleyCallback callback) throws JSONException {
@@ -54,6 +54,7 @@ public class AuthService {
             public String getBodyContentType() {
                 return "application/json; charset=utf-8";
             }
+
             @Override
             public byte[] getBody() throws AuthFailureError {
                 try {
